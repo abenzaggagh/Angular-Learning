@@ -13,8 +13,8 @@ import {NgForOf, NgOptimizedImage} from "@angular/common";
 })
 export class GalleryComponent {
 
-  cats = ['https://www.pexels.com/photo/grey-and-white-short-fur-cat-104827/',
-    'https://www.pexels.com/photo/white-and-grey-kitten-on-brown-and-black-leopard-print-textile-45201/',
-    'https://www.pexels.com/photo/close-up-photo-of-cute-sleeping-cat-416160/']
+  cats = ['1.jpg',
+    '2.jpg',
+    '3.jpg']
 
 }
