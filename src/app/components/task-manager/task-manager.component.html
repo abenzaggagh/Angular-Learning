@@ -1,0 +1,28 @@
+<h2>Task Manager ({{finishedTasksCount()}}/{{tasks().length}})</h2>
+<div>
+  <input #inputAddTask placeholder="New Task">
+  <button (click)="addTask(inputAddTask)">Add</button>
+</div>
+<ul>
+  @for(task of filteredTasks(); track $index) {
+    <li (click)="toggleTask(task)">
+      <input type="checkbox" [checked]="task.completed">
+      <span>{{ task.title }}</span>
+    </li>
+  }
+</ul>
+
+<div>
+  <button [ngStyle]="{'opacity': this.filter() === filters.ALL ? '0.5' : '1' }"
+    (click)="changeFilter(filters.ALL)">
+    All
+  </button>
+  <button [ngStyle]="{'opacity': this.filter() === filters.ACTIVE ? '0.5' : '1' }"
+          (click)="changeFilter(filters.ACTIVE)">
+    Active
+  </button>
+  <button [ngStyle]="{'opacity': this.filter() === filters.COMPLETED ? '0.5' : '1' }"
+    (click)="changeFilter(filters.COMPLETED)">
+    Completed
+  </button>
+</div>
