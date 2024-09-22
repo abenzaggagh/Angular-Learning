@@ -1,4 +1,4 @@
-import { Directive } from '@angular/core';
+import {Directive, Input, TemplateRef, ViewContainerRef} from '@angular/core';
 
 @Directive({
   selector: '[appShowFor]',
@@ -6,6 +6,15 @@ import { Directive } from '@angular/core';
 })
 export class ShowForDirective {
 
-  constructor() { }
+  @Input() set showFor(showForValue: boolean) {
+    if (showForValue) {
+      this.viewContainerRef.createEmbeddedView(
+        this.templateRef
+      );
+    }
+  }
+
+  constructor(private viewContainerRef: ViewContainerRef,
+              private templateRef: TemplateRef<any>) { }
 
 }

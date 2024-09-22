@@ -18,7 +18,8 @@ export class TaskManagerComponent {
   ])
 
   filter = signal(TaskFilter.ALL)
-  filters = TaskFilter;
+
+  readonly filters = TaskFilter;
 
   filteredTasks = computed(() => {
     switch (this.filter()) {

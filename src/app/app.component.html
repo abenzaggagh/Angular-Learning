@@ -1,14 +1,73 @@
-<p>Notifications Count Parent : {{ notificationCount }}</p>
-<p>Notifications Count Service : {{ notificationCount$ | async }}</p>
+<h1>{{ title }}</h1>
 
-<app-notifications-manager
-  [count]="notificationCount"
-  (countChanged)="updateNotifications($event)" >
-</app-notifications-manager>
+<div class="margin-top">
+  <a class="margin-right" appScrollTo target="#notif">Notification Manager</a>
+  <a class="margin-right" appScrollTo target="#version">Version Control</a>
+  <a class="margin-right" appScrollTo target="#gallery">Gallery</a>
+  <a class="margin-right" appScrollTo target="#users">Users</a>
+  <a class="margin-right" appScrollTo target="#task">Task Manager</a>
+  <a class="margin-right" appScrollTo target="#search">Search Text</a>
+</div>
 
-<p>Notifications with Service</p>
+<div class="margin-top" id="notif">
+  <p>Notifications Count Parent : {{ notificationCount }}</p>
+  <p>Notifications Count Service : {{ notificationCount$ | async }}</p>
+  <div class="margin-top">
+    <app-notifications-manager
+      [count]="notificationCount"
+      (countChanged)="updateNotifications($event)" >
+    </app-notifications-manager>
+  </div>
 
-<app-notifications-manager-service>
-</app-notifications-manager-service>
+  <div class="margin-top">
+    <p>Notifications with Service</p>
+
+    <app-notifications-manager-service>
+    </app-notifications-manager-service>
+  </div>
+</div>
+
+<div class="margin-top" id="version">
+  <form [formGroup]="versionForm" (ngSubmit)="updateVersion()" >
+    <input formControlName="version" />
+    <input type="submit" value="Submit" />
+  </form>
+
+
+  <app-version-logs [version]="version"></app-version-logs>
+</div>
+
+<div class="margin-top" id="gallery">
+  <app-gallery #gallery></app-gallery>
+  <button (click)="inspect(gallery)">Inspect Gallery</button>
+  <button (click)="removePicture()">Remove Picture</button>
+</div>
+
+<div class="margin-top" id="users">
+  <ul>
+    @for (user of users; track user.id) {
+      <li routerLink="/{{user.id}}">{{user.name}}</li>
+    }
+  </ul>
+
+</div>
 
 <router-outlet />
+
+<div class="margin-top" id="task">
+  <app-task-manager></app-task-manager>
+</div>
+
+<div class="margin-top" id="search">
+  <app-search-text></app-search-text>
+</div>
+
+<div class="margin-top">
+  <button (click)="toggleModal()">Display Modal</button>
+  <div class="margin-top">
+    <ng-template *appShowFor="showModal">
+      <h3>Modal Title</h3>
+      <p>Modal Text</p>
+    </ng-template>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<br>
+<div appReadTime
+     (readTimeCalculated)="onReadTimeCalculated($event)"
+     [configuration]="{ wordsPerMinute: 300 }">
+  <div class="margin-top">Read Time : {{ readTime }}</div>
+
+  <div class="margin-top">
+    <input [(ngModel)]="searchText" type="text" placeholder="Search">
+  </div>
+
+  <div class="margin-top">
+    <p appHighlight [highlightText]="searchText" >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet neque vitae velit feugiat tincidunt quis at ex. Aliquam erat volutpat. Cras suscipit mauris sem, imperdiet condimentum orci porta a. Curabitur efficitur vulputate nisi, in porta enim venenatis eu. Suspendisse potenti. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc in ante consequat, feugiat libero sed, pharetra ante. Aliquam a nisi eget nulla luctus eleifend id nec felis. Integer purus erat, interdum sed ornare at, cursus nec diam.
+      <br>
+      Sed elementum, neque id placerat faucibus, purus justo rutrum sapien, sit amet tincidunt magna leo ac lectus. Vestibulum lacinia interdum hendrerit. Cras sit amet ligula a est convallis tempus vitae at augue. Nullam finibus nibh at libero varius egestas. Donec lobortis elementum sagittis. Sed ligula odio, semper at elementum vitae, rhoncus nec turpis. Pellentesque sed iaculis elit. Nunc quis gravida risus. Proin suscipit pretium massa, ut tincidunt odio hendrerit nec. Nam nec enim placerat, porttitor mauris sed, tincidunt odio. Suspendisse potenti. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis arcu quam, facilisis et mollis eget, aliquam eu augue. Donec elit quam, rutrum molestie nibh id, rutrum sollicitudin orci. Ut dapibus libero bibendum, gravida nisi rhoncus, luctus ex.
+      <br>
+      Sed semper venenatis ipsum ut blandit. Nam enim diam, scelerisque sit amet maximus a, lacinia a metus. Nullam dapibus sem leo, non dictum nibh lobortis in. Maecenas vel nunc eu orci pharetra ullamcorper a elementum ligula. Donec mattis blandit mi in suscipit. Suspendisse potenti. Nulla tellus lacus, congue varius nulla sit amet, hendrerit sagittis ex. Quisque rutrum efficitur purus, ac scelerisque diam tristique at. Ut ornare dui at urna placerat faucibus. Aliquam tempus nec neque at ullamcorper. Donec purus felis, luctus cursus viverra molestie, bibendum id tortor.
+      <br>
+      Nulla risus nulla, aliquet ut malesuada a, blandit a velit. Vivamus auctor, augue nec aliquet tempor, libero sapien ornare ante, ac gravida dolor nulla a ante. Nam vulputate sagittis lorem, vel pharetra lectus sodales a. Vivamus rhoncus lectus ultricies urna mattis aliquam. Fusce vitae turpis nec nisi tempus pulvinar ut eget eros. Proin aliquet porttitor dapibus. In volutpat odio sit amet turpis molestie, sit amet fringilla dolor gravida. Sed egestas ullamcorper dolor id venenatis. Pellentesque pretium pharetra sem, quis laoreet risus blandit sed. Morbi vel arcu nibh. Phasellus vitae nulla lobortis, porttitor neque eu, finibus sapien. Duis in massa at nisl molestie lacinia. Proin in urna vitae est pulvinar mattis quis vel dui. Maecenas sed sem in nulla maximus feugiat id eget felis. Integer vulputate quis ante eu congue. Integer porttitor a magna eget accumsan.
+      <br>
+      Donec blandit porta augue in imperdiet. Suspendisse tristique faucibus libero, porta faucibus mauris mollis convallis. In molestie ipsum non metus ultricies, nec posuere ante tempus. Sed non dapibus tortor. Etiam posuere tincidunt interdum. Vestibulum viverra laoreet rutrum. Cras ultrices volutpat lacinia. Suspendisse eros urna, faucibus nec turpis sit amet, dapibus sodales velit. Nunc ut nunc nisl.
+    </p>
+  </div>
+</div>
+
